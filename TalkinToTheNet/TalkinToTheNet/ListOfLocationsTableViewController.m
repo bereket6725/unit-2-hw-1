@@ -56,13 +56,14 @@
 }
 
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
-    self.selectedQuery = selectedCell.detailTextLabel.text;
-    
-    NSLog(@"%@", self.selectedQuery);
-}
+//-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//   
+//    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+//    self.selectedQuery = selectedCell.detailTextLabel.text;
+//    
+//    NSLog(@"%@", self.selectedQuery);
+//}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -105,7 +106,9 @@
     
     
     
+    NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
     DetailLocationViewController* viewController = segue.destinationViewController;
+    viewController.queryPhrase = self.ListOfLocationsArray[indexPath.row];
    
     
     

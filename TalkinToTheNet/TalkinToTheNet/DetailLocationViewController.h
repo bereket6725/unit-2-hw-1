@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "API Manager.h"
 
 @interface DetailLocationViewController : UIViewController <UITableViewDataSource>
 
 
 @property (nonatomic) NSString* queryPhrase;
+@property (nonatomic) NSURL   * url;
 
+-(void)fetchFourSquareData;
 
 @property (strong, nonatomic) IBOutlet UITextView *fourSquareAddressTextView;
 
