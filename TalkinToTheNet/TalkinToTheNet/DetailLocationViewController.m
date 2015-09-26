@@ -67,9 +67,9 @@
         
         NSLog(@"%@",json);
         
-        self.locationAddress = [NSString stringWithFormat:[json objectForKey:@"formattedAddress"]];
-        
-        self.fourSquareAddressTextView.text = self.locationAddress;
+//        self.locationAddress = [NSString stringWithFormat:[json objectForKey:@"formattedAddress"]];
+//        
+//        self.fourSquareAddressTextView.text = self.locationAddress;
     }];
 
 
