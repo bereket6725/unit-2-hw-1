@@ -23,7 +23,7 @@
     
     if ([self.queryPhrase  isEqual: @"Bronx AleHouse"] )
     {
-        NSString* urlString= @"https://api.foursquare.com/v2/venues/search?client_id=DQU1A2YJWRSRRIP1OM1LHRVRH4RLVBDCD11OTNGOQ2QRDNPH&client_secret=V2DXHM04GZDA1FKRGDLIPLEGZ3D0BP25GNN4XB4L1GSY3E2B&ll=40.884786,-73.899595";
+        NSString* urlString= @"https://api.foursquare.com/v2/venues/search?client_id=DQU1A2YJWRSRRIP1OM1LHRVRH4RLVBDCD11OTNGOQ2QRDNPH&client_secret=V2DXHM04GZDA1FKRGDLIPLEGZ3D0BP25GNN4XB4L1GSY3E2B&v=20152509&v=20130815&ll=40.884786,-73.899595";
         
         NSString* encodedString = [urlString stringByAddingPercentEscapesUsingEncoding:[NSCharacterSet URLQueryAllowedCharacterSet]];
         
