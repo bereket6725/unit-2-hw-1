@@ -116,7 +116,7 @@
         
         self.instagramData = [json objectForKey:@"data"];
         
-        self.instagramImage = self.instagramData[0];
+        NSLog(@"%@",json);
         
         
        
