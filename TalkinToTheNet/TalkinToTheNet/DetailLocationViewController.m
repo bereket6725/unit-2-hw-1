@@ -24,13 +24,13 @@
     
     if ([self.queryPhrase  isEqual: @"Waldorf Astoria"] )
     {
-        self.yourChoice = @"waldorfastoria";
+        self.yourChoice = @"waldorfastoriahotel";
         
         
     }
     else if([self.queryPhrase  isEqual: @"Rockefeller Center"]){
         
-        self.yourChoice = @"rockefellercenter"; //.....  // do the same thing as above
+        self.yourChoice = @"RockefellerCenter"; //.....  // do the same thing as above
         
         
     }
