@@ -12,6 +12,12 @@
 
 @property (nonatomic) NSString *yourChoice;
 
+@property (nonatomic) NSString *city;
+@property (nonatomic) NSString *state;
+@property (nonatomic) NSString *postalCode;
+@property (nonatomic) NSString *address;
+
+
 @property NSString* locationAddress;
 
 @end
@@ -68,27 +74,35 @@
         
         NSArray *results = [[json objectForKey:@"response"] objectForKey:@"venues"];
         
-        
+        NSLog(@"%@", json);
         
         for (NSDictionary* result in results){
             
-            NSString* address = [[result objectForKey:@"location"] objectForKey:@"formattedAddress"];
-            
-            
-            
-            self.locationAddress = address;
-            NSLog(@"The address is %@", address);
+//            self.address = [[result objectForKey:@"location"] objectForKey:@"address"];
+//            self.city  = [[result objectForKey:@"location"] objectForKey:@"city"];
+//            self.state  = [[result objectForKey:@"location"] objectForKey:@"state"];
+//            self.postalCode =  [[result objectForKey:@"location"] objectForKey:@"postalcode"];
+//            
+//            
+//            NSString* newStringA = [self.address stringByAppendingString:self.city];
+//            NSString* newStringB = [newStringA stringByAppendingString:self.state];
+//            self.locationAddress = [newStringB stringByAppendingString:self.postalCode];
+           
+           // NSLog(@"The address is %@", address);
             
         }
         
+        self.fourSquareAddressTextLabel.text= self.locationAddress;
         
         
         //        self.locationAddress = [NSString stringWithFormat:[json objectForKey:@"formattedAddress"]];
         //
         //        self.fourSquareAddressTextView.text = self.locationAddress;
     }];
-    self.fourSquareAddressTextLabel.text= self.locationAddress;
-   // NSLog(@"self.locationAddress %@",self.locationAddress);
+    
+   //self.fourSquareAddressTextLabel.text= self.locationAddress;
+    
+       // NSLog(@"self.locationAddress %@",self.locationAddress);
 }
 /*
  #pragma mark - Navigation
