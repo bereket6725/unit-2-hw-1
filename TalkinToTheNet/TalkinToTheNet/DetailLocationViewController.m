@@ -9,11 +9,9 @@
 #import "DetailLocationViewController.h"
 
 @interface DetailLocationViewController ()
-
+@property (nonatomic) NSString *yourChoice;
 @end
-
 @implementation DetailLocationViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -23,34 +21,40 @@
     
     if ([self.queryPhrase  isEqual: @"Bronx AleHouse"] )
     {
-        NSString* urlString= @"https://api.foursquare.com/v2/venues/search?client_id=DQU1A2YJWRSRRIP1OM1LHRVRH4RLVBDCD11OTNGOQ2QRDNPH&client_secret=V2DXHM04GZDA1FKRGDLIPLEGZ3D0BP25GNN4XB4L1GSY3E2B&v=20152509&v=20130815&ll=40.884786,-73.899595";
-        
-        NSString* encodedString = [urlString stringByAddingPercentEscapesUsingEncoding:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        self.yourChoice = @"bronxalehouse";
         
         
-   
-        self.url = [NSURL URLWithString:encodedString];
     }
     else if([self.queryPhrase  isEqual: @"An Beal Bocht"]){
         
-        self.url = [NSURL URLWithString:@""];
+        self.yourChoice = @""; //.....  // do the same thing as above
+        
         
     }
     else if([self.queryPhrase  isEqual: @"Wave Hill"]){
         
-       self.url = [NSURL URLWithString:@""];
-        
-    }
-    else {
-        NSLog(@"dude you broke my code :(");
+        self.yourChoice = @"";
     }
     
+    
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=DQU1A2YJWRSRRIP1OM1LHRVRH4RLVBDCD11OTNGOQ2QRDNPH&client_secret=V2DXHM04GZDA1FKRGDLIPLEGZ3D0BP25GNN4XB4L1GSY3E2B&v=20130815&ll=40.7,-74&query=%@",self.yourChoice];
+    
+    NSString* encodedString = [urlString stringByAddingPercentEscapesUsingEncoding:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+    self.url = [NSURL URLWithString:encodedString];
+    
+    
+    
+    //
+    //    else {
+    //        NSLog(@"dude you broke my code :(");
+    //    }
+    //
     
     [self fetchFourSquareData];
     // Do any additional setup after loading the view.
 }
-
-
 
 -(void)fetchFourSquareData{
  
