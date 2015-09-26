@@ -7,6 +7,7 @@
 //
 #import "DetailLocationViewController.h"
 #import "API Manager.h"
+#import "InstagramPost.h"
 @interface DetailLocationViewController ()
 @property (nonatomic) NSString *yourChoice;
 @property (nonatomic) NSString* locationAddress;
@@ -17,6 +18,7 @@
 
 //--------------------------------------------------------------------------------------------------------
 
+@property (nonatomic) NSMutableArray* searchResults;
 //added for instagram
 //@property (nonatomic) NSArray* instagramData;
 
@@ -48,17 +50,17 @@
     
     NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=DQU1A2YJWRSRRIP1OM1LHRVRH4RLVBDCD11OTNGOQ2QRDNPH&client_secret=V2DXHM04GZDA1FKRGDLIPLEGZ3D0BP25GNN4XB4L1GSY3E2B&v=20130815&ll=40.7,-74&query=%@",self.yourChoice];
     
-   //-----------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------
     //added for instagram
-//    NSString *instagramURLString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/%@/media/recent?client_id=a6dff3072d344b3c8c645275dfdc8fa2", self.yourChoice];
-    //-----------------------------------------------------------------------------------------------------------
+    NSString *instagramURLString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/%@/media/recent?client_id=a6dff3072d344b3c8c645275dfdc8fa2", self.yourChoice];
+//-----------------------------------------------------------------------------------------------------------------
 
     
     //encoded url
     NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     //addedforinstagram
-//    self.instagramURL= [NSURL URLWithString:instagramURLString];
+    self.instagramURL= [NSURL URLWithString:instagramURLString];
     
     self.url = [NSURL URLWithString:encodedString];
     NSLog(@"self.url %@", self.url);
@@ -67,7 +69,7 @@
 
 //--------------------------------------------------------------------------------------------------------------
     //added for instagram
-    //[self fetchInstagramData];
+    [self fetchInstagramData];
     
 //---------------------------------------------------------------------------------------------------------------
    
@@ -107,23 +109,36 @@
 //-----------------------------------------------------------------------------------------------------------------
 
 //added for instagram
-//- (void)fetchInstagramData {
-//    
-//    // create an instagram url
-//    
-//    // fetch data from the instagram endpoint and print json response
-//    [API_Manager GETRequestWithURL:self.instagramURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//        
-//        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//        
-//        self.instagramData = [json objectForKey:@"data"];
-//        
-//        NSLog(@"%@",json);
-//        
-//        
-//       
-//    }];
-//}
+- (void)fetchInstagramData {
+    
+    // create an instagram url
+   
+    
+    // fetch data from the instagram endpoint and print json response
+    [API_Manager GETRequestWithURL:self.instagramURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        
+        NSLog(@"%@",json);
+        
+        NSArray* results = json[@"data"];
+        
+        //reset my array
+        self.searchResults  = [[NSMutableArray alloc] init];
+        
+        //loop through all JSON posts
+        for (NSDictionary* result in results) {
+            
+            //add post to array
+            InstagramPost* post= [[InstagramPost alloc] initWithJSON:result];
+            
+            [self.searchResults addObject:post];
+            
+            self.instagramImage = [self.searchResults firstObject];
+        }
+        
+    }];
+}
 //-----------------------------------------------------------------------------------------------------------------
 
 /*

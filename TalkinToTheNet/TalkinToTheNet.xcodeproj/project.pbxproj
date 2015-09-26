@@ -12,6 +12,7 @@
 		8D7DCD541BAF859400A92AD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7DCD521BAF859400A92AD2 /* Main.storyboard */; };
 		8D7DCD561BAF859400A92AD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D7DCD551BAF859400A92AD2 /* Assets.xcassets */; };
 		8D7DCD591BAF859400A92AD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7DCD571BAF859400A92AD2 /* LaunchScreen.storyboard */; };
+		AB665E611BB67FA000DE3C50 /* InstagramPost.m in Sources */ = {isa = PBXBuildFile; fileRef = AB665E601BB67FA000DE3C50 /* InstagramPost.m */; settings = {ASSET_TAGS = (); }; };
 		AB6E6E5D1BB4B10300756BD8 /* ListOfLocationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6E6E5C1BB4B10300756BD8 /* ListOfLocationsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AB6E6E601BB4B12200756BD8 /* DetailLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6E6E5F1BB4B12200756BD8 /* DetailLocationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AB6E6E631BB4BA7000756BD8 /* API Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6E6E621BB4BA7000756BD8 /* API Manager.m */; settings = {ASSET_TAGS = (); }; };
@@ -26,6 +27,8 @@
 		8D7DCD551BAF859400A92AD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D7DCD581BAF859400A92AD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D7DCD5A1BAF859400A92AD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB665E5F1BB67FA000DE3C50 /* InstagramPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramPost.h; sourceTree = "<group>"; };
+		AB665E601BB67FA000DE3C50 /* InstagramPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramPost.m; sourceTree = "<group>"; };
 		AB6E6E5B1BB4B10300756BD8 /* ListOfLocationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOfLocationsTableViewController.h; sourceTree = "<group>"; };
 		AB6E6E5C1BB4B10300756BD8 /* ListOfLocationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfLocationsTableViewController.m; sourceTree = "<group>"; };
 		AB6E6E5E1BB4B12200756BD8 /* DetailLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailLocationViewController.h; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 				AB6E6E5C1BB4B10300756BD8 /* ListOfLocationsTableViewController.m */,
 				AB6E6E5E1BB4B12200756BD8 /* DetailLocationViewController.h */,
 				AB6E6E5F1BB4B12200756BD8 /* DetailLocationViewController.m */,
+				AB665E5F1BB67FA000DE3C50 /* InstagramPost.h */,
+				AB665E601BB67FA000DE3C50 /* InstagramPost.m */,
 				8D7DCD521BAF859400A92AD2 /* Main.storyboard */,
 				8D7DCD551BAF859400A92AD2 /* Assets.xcassets */,
 				8D7DCD571BAF859400A92AD2 /* LaunchScreen.storyboard */,
@@ -163,6 +168,7 @@
 				AB6E6E601BB4B12200756BD8 /* DetailLocationViewController.m in Sources */,
 				AB6E6E5D1BB4B10300756BD8 /* ListOfLocationsTableViewController.m in Sources */,
 				8D7DCD4E1BAF859400A92AD2 /* AppDelegate.m in Sources */,
+				AB665E611BB67FA000DE3C50 /* InstagramPost.m in Sources */,
 				8D7DCD4B1BAF859400A92AD2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
