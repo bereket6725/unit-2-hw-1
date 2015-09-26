@@ -14,10 +14,13 @@
 
 @property (nonatomic) NSString* queryPhrase;
 @property (nonatomic) NSURL   * url;
+@property (nonatomic) NSURL   * instagramURL;
+
 
 -(void)fetchFourSquareData;
 
 @property (strong, nonatomic) IBOutlet UILabel *fourSquareAddressTextLabel;
 
+@property (strong, nonatomic) IBOutlet UIImageView *instagramImage;
 
 @end

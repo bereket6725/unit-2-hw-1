@@ -148,6 +148,7 @@
                     </view>
                     <connections>
                         <outlet property="fourSquareAddressTextLabel" destination="XwY-3W-6mT" id="Izl-VD-mAd"/>
+                        <outlet property="instagramImage" destination="9VA-8H-Afj" id="N5t-KO-ua8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GUH-id-tGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
