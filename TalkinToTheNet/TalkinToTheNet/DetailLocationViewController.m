@@ -121,21 +121,21 @@
         
         NSLog(@"%@",json);
         
-        NSArray* results = json[@"data"];
-        
-        //reset my array
-        self.searchResults  = [[NSMutableArray alloc] init];
-        
-        //loop through all JSON posts
-        for (NSDictionary* result in results) {
-            
-            //add post to array
-            InstagramPost* post= [[InstagramPost alloc] initWithJSON:result];
-            
-            [self.searchResults addObject:post];
-            
-            self.instagramImage = [self.searchResults firstObject];
-        }
+//        NSArray* results = json[@"data"];
+//        
+//        //reset my array
+//        self.searchResults  = [[NSMutableArray alloc] init];
+//        
+//        //loop through all JSON posts
+//        for (NSDictionary* result in results) {
+//            
+//            //add post to array
+//            InstagramPost* post= [[InstagramPost alloc] initWithJSON:result];
+//            
+//            [self.searchResults addObject:post];
+//            
+//            self.instagramImage = [self.searchResults firstObject];
+//        }
         
     }];
 }
