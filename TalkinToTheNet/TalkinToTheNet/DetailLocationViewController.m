@@ -9,7 +9,10 @@
 #import "DetailLocationViewController.h"
 
 @interface DetailLocationViewController ()
+
 @property (nonatomic) NSString *yourChoice;
+@property NSString* locationAddress;
+
 @end
 @implementation DetailLocationViewController
 - (void)viewDidLoad {
@@ -33,7 +36,7 @@
     }
     else if([self.queryPhrase  isEqual: @"Wave Hill"]){
         
-        self.yourChoice = @"waveHill";
+        self.yourChoice = @"wavehill";
     }
     
     
@@ -63,6 +66,10 @@
          NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
         NSLog(@"%@",json);
+        
+        self.locationAddress = [NSString stringWithFormat:[json objectForKey:@"formattedAddress"]];
+        
+        self.fourSquareAddressTextView.text = self.locationAddress;
     }];
 
 
