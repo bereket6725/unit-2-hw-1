@@ -50,7 +50,7 @@
     NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     
-    self.instagramURL= [NSURL URLWithString:self.instagramURL];
+    self.instagramURL= [NSURL URLWithString:instagramURLString];
     
     self.url = [NSURL URLWithString:encodedString];
     NSLog(@"self.url %@", self.url);
@@ -100,7 +100,7 @@
         
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
-        self.instagramData = [json objectForKey:@"data"];
+        NSLog(@"%@", json);
         
        
     }];
