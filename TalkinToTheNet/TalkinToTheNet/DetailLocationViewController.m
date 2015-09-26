@@ -100,7 +100,10 @@
         
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
-        NSLog(@"%@", json);
+        self.instagramData = [json objectForKey:@"data"];
+        
+        self.instagramImage = self.instagramData[0];
+        
         
        
     }];
