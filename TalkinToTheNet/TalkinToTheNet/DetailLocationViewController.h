@@ -17,7 +17,7 @@
 
 -(void)fetchFourSquareData;
 
-@property (strong, nonatomic) IBOutlet UITextView *fourSquareAddressTextView;
+@property (strong, nonatomic) IBOutlet UILabel *fourSquareAddressTextLabel;
 
 
 @end

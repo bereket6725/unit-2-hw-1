@@ -65,22 +65,22 @@
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="THIS IS IN PLACE OF THE ADDRESS FROM THE FOURSQUARE API" translatesAutoresizingMaskIntoConstraints="NO" id="MJ8-oA-7JX">
-                                                        <rect key="frame" x="0.0" y="80" width="300" height="188"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    </textView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwY-3W-6mT">
+                                                        <rect key="frame" x="63" y="54" width="174" height="160"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.68211171039999996" green="0.99501309530000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="MJ8-oA-7JX" secondAttribute="bottom" id="28f-AO-LWO"/>
                                                     <constraint firstAttribute="trailing" secondItem="zeC-At-5iO" secondAttribute="trailing" id="8sU-kc-vBt"/>
-                                                    <constraint firstItem="MJ8-oA-7JX" firstAttribute="top" secondItem="zeC-At-5iO" secondAttribute="bottom" constant="43" id="HS5-hH-NdW"/>
-                                                    <constraint firstItem="MJ8-oA-7JX" firstAttribute="height" secondItem="Hnt-0j-SfI" secondAttribute="height" multiplier="0.7" id="ZC4-P6-r4C"/>
+                                                    <constraint firstItem="XwY-3W-6mT" firstAttribute="centerX" secondItem="Hnt-0j-SfI" secondAttribute="centerX" id="HxP-VI-TFo"/>
+                                                    <constraint firstItem="XwY-3W-6mT" firstAttribute="centerY" secondItem="Hnt-0j-SfI" secondAttribute="centerY" id="Ufp-m7-5x3"/>
                                                     <constraint firstItem="zeC-At-5iO" firstAttribute="top" secondItem="Hnt-0j-SfI" secondAttribute="top" constant="16" id="Zpc-Hj-Qhq"/>
+                                                    <constraint firstItem="XwY-3W-6mT" firstAttribute="leading" secondItem="Hnt-0j-SfI" secondAttribute="leading" constant="63" id="dVO-aJ-0pq"/>
                                                     <constraint firstItem="zeC-At-5iO" firstAttribute="leading" secondItem="Hnt-0j-SfI" secondAttribute="leading" id="heC-yP-hfO"/>
-                                                    <constraint firstAttribute="trailing" secondItem="MJ8-oA-7JX" secondAttribute="trailing" id="len-0f-MUk"/>
-                                                    <constraint firstItem="MJ8-oA-7JX" firstAttribute="leading" secondItem="Hnt-0j-SfI" secondAttribute="leading" id="pZM-Ho-IbN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="XwY-3W-6mT" secondAttribute="bottom" constant="54" id="pNH-ri-uMR"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0GW-Pq-2pm">
@@ -114,6 +114,9 @@
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9VA-8H-Afj">
                                         <rect key="frame" x="0.0" y="268" width="600" height="268"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="268" id="KUD-bF-yMB"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,7 +140,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="fourSquareAddressTextView" destination="MJ8-oA-7JX" id="Ctm-P6-W8l"/>
+                        <outlet property="fourSquareAddressTextLabel" destination="XwY-3W-6mT" id="Izl-VD-mAd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GUH-id-tGX" userLabel="First Responder" sceneMemberID="firstResponder"/>

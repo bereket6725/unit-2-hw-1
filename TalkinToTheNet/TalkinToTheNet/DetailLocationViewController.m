@@ -87,7 +87,7 @@
         //
         //        self.fourSquareAddressTextView.text = self.locationAddress;
     }];
-    self.fourSquareAddressTextView.text= self.locationAddress;
+    self.fourSquareAddressTextLabel.text= self.locationAddress;
    // NSLog(@"self.locationAddress %@",self.locationAddress);
 }
 /*
