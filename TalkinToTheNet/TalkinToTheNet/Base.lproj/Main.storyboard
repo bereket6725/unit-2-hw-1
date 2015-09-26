@@ -53,20 +53,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ikm-wI-7A9">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="esc-hJ-NNd">
-                                        <rect key="frame" x="0.0" y="268" width="600" height="268"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fjm-qN-SJB">
-                                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fjm-qN-SJB" id="PyY-wG-gFS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z10-Y8-P7n">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="268"/>
                                         <subviews>
@@ -89,6 +75,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="MJ8-oA-7JX" secondAttribute="bottom" id="28f-AO-LWO"/>
                                                     <constraint firstAttribute="trailing" secondItem="zeC-At-5iO" secondAttribute="trailing" id="8sU-kc-vBt"/>
+                                                    <constraint firstItem="MJ8-oA-7JX" firstAttribute="top" secondItem="zeC-At-5iO" secondAttribute="bottom" constant="43" id="HS5-hH-NdW"/>
                                                     <constraint firstItem="MJ8-oA-7JX" firstAttribute="height" secondItem="Hnt-0j-SfI" secondAttribute="height" multiplier="0.7" id="ZC4-P6-r4C"/>
                                                     <constraint firstItem="zeC-At-5iO" firstAttribute="top" secondItem="Hnt-0j-SfI" secondAttribute="top" constant="16" id="Zpc-Hj-Qhq"/>
                                                     <constraint firstItem="zeC-At-5iO" firstAttribute="leading" secondItem="Hnt-0j-SfI" secondAttribute="leading" id="heC-yP-hfO"/>
@@ -125,17 +112,19 @@
                                             <constraint firstItem="Hnt-0j-SfI" firstAttribute="leading" secondItem="z10-Y8-P7n" secondAttribute="leading" id="wB3-fS-2ny"/>
                                         </constraints>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9VA-8H-Afj">
+                                        <rect key="frame" x="0.0" y="268" width="600" height="268"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="9VA-8H-Afj" firstAttribute="leading" secondItem="ikm-wI-7A9" secondAttribute="leading" id="0yU-pv-1iE"/>
+                                    <constraint firstAttribute="trailing" secondItem="9VA-8H-Afj" secondAttribute="trailing" id="8F3-fY-mg0"/>
                                     <constraint firstAttribute="trailing" secondItem="z10-Y8-P7n" secondAttribute="trailing" id="Hhd-0d-wfm"/>
-                                    <constraint firstItem="esc-hJ-NNd" firstAttribute="height" secondItem="ikm-wI-7A9" secondAttribute="height" multiplier="0.5" id="YFG-hz-qCc"/>
-                                    <constraint firstItem="esc-hJ-NNd" firstAttribute="top" secondItem="z10-Y8-P7n" secondAttribute="bottom" id="daI-1j-CNh"/>
+                                    <constraint firstItem="9VA-8H-Afj" firstAttribute="top" secondItem="z10-Y8-P7n" secondAttribute="bottom" id="b4h-8z-jZ9"/>
                                     <constraint firstItem="z10-Y8-P7n" firstAttribute="leading" secondItem="ikm-wI-7A9" secondAttribute="leading" id="f6S-22-LEf"/>
-                                    <constraint firstAttribute="trailing" secondItem="esc-hJ-NNd" secondAttribute="trailing" id="gY4-ac-Qvw"/>
                                     <constraint firstItem="z10-Y8-P7n" firstAttribute="top" secondItem="ikm-wI-7A9" secondAttribute="top" id="ga6-t3-ThM"/>
-                                    <constraint firstAttribute="bottom" secondItem="esc-hJ-NNd" secondAttribute="bottom" id="jbq-6k-fAL"/>
-                                    <constraint firstItem="esc-hJ-NNd" firstAttribute="leading" secondItem="ikm-wI-7A9" secondAttribute="leading" id="xl8-K1-Fzm"/>
+                                    <constraint firstAttribute="bottom" secondItem="9VA-8H-Afj" secondAttribute="bottom" id="nf0-C9-pQW"/>
                                 </constraints>
                             </view>
                         </subviews>

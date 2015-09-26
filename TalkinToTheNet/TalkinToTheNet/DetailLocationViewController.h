@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "API Manager.h"
 
-@interface DetailLocationViewController : UIViewController <UITableViewDataSource>
+@interface DetailLocationViewController : UIViewController 
 
 
 @property (nonatomic) NSString* queryPhrase;

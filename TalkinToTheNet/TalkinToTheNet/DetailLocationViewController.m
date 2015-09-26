@@ -67,7 +67,7 @@
         
         // NSLog(@"%@",json);
         
-        NSArray* results = [[json objectForKey:@"results"]objectForKey:@"venues"];
+        NSArray* results = [[json objectForKey:@"response"]objectForKey:@"venues"];
         
         for (NSDictionary* result in results){
             NSString* address = [result objectForKey:@"formattedAddress"];
