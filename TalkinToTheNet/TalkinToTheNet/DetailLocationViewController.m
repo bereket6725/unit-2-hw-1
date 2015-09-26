@@ -28,9 +28,9 @@
         
         
     }
-    else if([self.queryPhrase  isEqual: @"Rockefeller Center"]){
+    else if([self.queryPhrase  isEqual: @"Madame Tussauds"]){
         
-        self.yourChoice = @"RockefellerCenter"; //.....  // do the same thing as above
+        self.yourChoice = @"madametussauds"; //.....  // do the same thing as above
         
         
     }

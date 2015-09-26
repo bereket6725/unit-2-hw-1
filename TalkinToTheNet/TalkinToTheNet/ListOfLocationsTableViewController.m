@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.ListOfLocationsArray = @[@"Waldorf Astoria", @"Rockefeller Center", @"Wave Hill"];
+    self.ListOfLocationsArray = @[@"Waldorf Astoria", @"Madame Tussauds", @"Wave Hill"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
