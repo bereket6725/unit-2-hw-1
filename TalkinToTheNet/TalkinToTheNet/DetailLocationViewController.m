@@ -15,11 +15,13 @@
 @property (nonatomic) NSString *placeState;
 @property (nonatomic) NSString *placePostalCode;
 
-
-
+//---------------------------------------------------------
+//added for instagram
 @property (nonatomic) NSArray* instagramData;
+//---------------------------------------------------------
 
 @end
+
 @implementation DetailLocationViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,21 +45,30 @@
     
     
     NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=DQU1A2YJWRSRRIP1OM1LHRVRH4RLVBDCD11OTNGOQ2QRDNPH&client_secret=V2DXHM04GZDA1FKRGDLIPLEGZ3D0BP25GNN4XB4L1GSY3E2B&v=20130815&ll=40.7,-74&query=%@",self.yourChoice];
-   
+    
+   //-----------------------------------------------------------------------------------------------------------
+    //added for instagram
     NSString *instagramURLString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/%@/media/recent?client_id=a6dff3072d344b3c8c645275dfdc8fa2", self.yourChoice];
+    //-----------------------------------------------------------------------------------------------------------
+
     
     //encoded url
     NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
-    
+    //addedforinstagram
     self.instagramURL= [NSURL URLWithString:instagramURLString];
     
     self.url = [NSURL URLWithString:encodedString];
     NSLog(@"self.url %@", self.url);
     
     [self fetchFourSquareData];
+
+//--------------------------------------------------------------------------------------------------------------
+    //added for instagram
     [self fetchInstagramData];
-    // Do any additional setup after loading the view.
+    
+//---------------------------------------------------------------------------------------------------------------
+   
 }
 -(void)fetchFourSquareData{
     NSLog(@"called this method");
@@ -91,6 +102,9 @@
     
 }
 
+//-----------------------------------------------------------------------------------------------------------------
+
+//added for instagram
 - (void)fetchInstagramData {
     
     // create an instagram url
@@ -108,7 +122,7 @@
        
     }];
 }
-
+//-----------------------------------------------------------------------------------------------------------------
 
 /*
  #pragma mark - Navigation
