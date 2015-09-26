@@ -15,10 +15,12 @@
 @property (nonatomic) NSString *placeState;
 @property (nonatomic) NSString *placePostalCode;
 
-//---------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------
+
 //added for instagram
-@property (nonatomic) NSArray* instagramData;
-//---------------------------------------------------------
+//@property (nonatomic) NSArray* instagramData;
+
+//-------------------------------------------------------------------------------------------------------
 
 @end
 
@@ -48,7 +50,7 @@
     
    //-----------------------------------------------------------------------------------------------------------
     //added for instagram
-    NSString *instagramURLString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/%@/media/recent?client_id=a6dff3072d344b3c8c645275dfdc8fa2", self.yourChoice];
+//    NSString *instagramURLString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/%@/media/recent?client_id=a6dff3072d344b3c8c645275dfdc8fa2", self.yourChoice];
     //-----------------------------------------------------------------------------------------------------------
 
     
@@ -56,7 +58,7 @@
     NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     //addedforinstagram
-    self.instagramURL= [NSURL URLWithString:instagramURLString];
+//    self.instagramURL= [NSURL URLWithString:instagramURLString];
     
     self.url = [NSURL URLWithString:encodedString];
     NSLog(@"self.url %@", self.url);
@@ -65,7 +67,7 @@
 
 //--------------------------------------------------------------------------------------------------------------
     //added for instagram
-    [self fetchInstagramData];
+    //[self fetchInstagramData];
     
 //---------------------------------------------------------------------------------------------------------------
    
@@ -105,23 +107,23 @@
 //-----------------------------------------------------------------------------------------------------------------
 
 //added for instagram
-- (void)fetchInstagramData {
-    
-    // create an instagram url
-    
-    // fetch data from the instagram endpoint and print json response
-    [API_Manager GETRequestWithURL:self.instagramURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        
-        self.instagramData = [json objectForKey:@"data"];
-        
-        NSLog(@"%@",json);
-        
-        
-       
-    }];
-}
+//- (void)fetchInstagramData {
+//    
+//    // create an instagram url
+//    
+//    // fetch data from the instagram endpoint and print json response
+//    [API_Manager GETRequestWithURL:self.instagramURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        
+//        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//        
+//        self.instagramData = [json objectForKey:@"data"];
+//        
+//        NSLog(@"%@",json);
+//        
+//        
+//       
+//    }];
+//}
 //-----------------------------------------------------------------------------------------------------------------
 
 /*
