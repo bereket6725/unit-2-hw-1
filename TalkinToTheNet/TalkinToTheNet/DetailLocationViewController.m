@@ -65,13 +65,25 @@
         
          NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
-        NSLog(@"%@",json);
+        // NSLog(@"%@",json);
+        
+        NSArray* results = [[json objectForKey:@"results"]objectForKey:@"venues"];
+        
+        for (NSDictionary* result in results){
+            NSString* address = [result objectForKey:@"formattedAddress"];
+            self.locationAddress = address;
+            NSLog(@"%@", address);
+         
+        }
+        
+        
         
 //        self.locationAddress = [NSString stringWithFormat:[json objectForKey:@"formattedAddress"]];
 //        
 //        self.fourSquareAddressTextView.text = self.locationAddress;
     }];
-
+    self.fourSquareAddressTextView.text= self.locationAddress;
+    NSLog(@"%@",self.locationAddress);
 
 }
 
