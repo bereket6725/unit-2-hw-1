@@ -7,23 +7,15 @@
 //
 #import "DetailLocationViewController.h"
 #import "API Manager.h"
-
 @interface DetailLocationViewController ()
-
 @property (nonatomic) NSString *yourChoice;
-
-@property (nonatomic) NSString *city;
-@property (nonatomic) NSString *state;
-@property (nonatomic) NSString *postalCode;
-@property (nonatomic) NSString *address;
-
-
-@property NSString* locationAddress;
-
+@property (nonatomic) NSString* locationAddress;
+@property (nonatomic) NSString *placeAddress;
+@property (nonatomic) NSString *placeCity;
+@property (nonatomic) NSString *placeState;
+@property (nonatomic) NSString *placePostalCode;
 @end
-
 @implementation DetailLocationViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -56,13 +48,6 @@
     self.url = [NSURL URLWithString:encodedString];
     NSLog(@"self.url %@", self.url);
     
-    
-    //
-    //    else {
-    //        NSLog(@"dude you broke my code :(");
-    //    }
-    //
-    
     [self fetchFourSquareData];
     // Do any additional setup after loading the view.
 }
@@ -74,35 +59,28 @@
         
         NSArray *results = [[json objectForKey:@"response"] objectForKey:@"venues"];
         
-        NSLog(@"%@", json);
-        
         for (NSDictionary* result in results){
             
-//            self.address = [[result objectForKey:@"location"] objectForKey:@"address"];
-//            self.city  = [[result objectForKey:@"location"] objectForKey:@"city"];
-//            self.state  = [[result objectForKey:@"location"] objectForKey:@"state"];
-//            self.postalCode =  [[result objectForKey:@"location"] objectForKey:@"postalcode"];
-//            
-//            
-//            NSString* newStringA = [self.address stringByAppendingString:self.city];
-//            NSString* newStringB = [newStringA stringByAppendingString:self.state];
-//            self.locationAddress = [newStringB stringByAppendingString:self.postalCode];
-           
-           // NSLog(@"The address is %@", address);
+            
+            self.placeAddress = [[result objectForKey:@"location"] objectForKey:@"address"];
+            self.placeCity = [[result objectForKey:@"location"] objectForKey:@"city"];
+            self.placeState = [[result objectForKey:@"location"] objectForKey:@"state"];
+            self.placePostalCode = [[result objectForKey:@"location"] objectForKey:@"postalCode"];
+            
+            
+            
+            NSLog(@"The placeAddress is %@", self.placeAddress);
+            NSLog(@"The placeCity is %@", self.placeCity);
+            NSLog(@"The placeState is %@", self.placeState);
+            NSLog(@"The placePostalCode is %@", self.placePostalCode);
+            
             
         }
         
-        self.fourSquareAddressTextLabel.text= self.locationAddress;
-        
-        
-        //        self.locationAddress = [NSString stringWithFormat:[json objectForKey:@"formattedAddress"]];
-        //
-        //        self.fourSquareAddressTextView.text = self.locationAddress;
+        self.fourSquareAddressTextLabel.text = [NSString stringWithFormat:@"%@, %@, %@, %@",self.placeAddress, self.placeCity,self.placeState, self.placePostalCode] ;
     }];
     
-   //self.fourSquareAddressTextLabel.text= self.locationAddress;
     
-       // NSLog(@"self.locationAddress %@",self.locationAddress);
 }
 /*
  #pragma mark - Navigation
@@ -113,4 +91,3 @@
  }
  */
 @end
-
