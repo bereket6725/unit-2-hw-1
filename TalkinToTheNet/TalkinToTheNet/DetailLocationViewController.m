@@ -18,7 +18,7 @@
 
 //--------------------------------------------------------------------------------------------------------
 
-@property (nonatomic) NSMutableArray* searchResults;
+//@property (nonatomic) NSMutableArray* searchResults;
  //INSTAGRAM CODE
 @property (nonatomic) NSArray* instagramData;
 
@@ -27,6 +27,8 @@
 @end
 
 @implementation DetailLocationViewController
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -71,7 +73,7 @@
 
 //--------------------------------------------------------------------------------------------------------------
      //INSTAGRAM CODE
- // [self fetchInstagramData];
+    [self fetchInstagramData];
     
 //---------------------------------------------------------------------------------------------------------------
    
@@ -112,11 +114,15 @@
 
 //-----------------------------------------------------------------------------------------------------------------
 
+
+
+
  //INSTAGRAM CODE
 - (void)fetchInstagramData {
+    // helpful description of kCFStreamErrorDomainSSL http://ste.vn/2015/06/10/configuring-app-transport-security-ios-9-osx-10-11/
+    
     
     // create an instagram url
-   
     
     // fetch data from the instagram endpoint and print json response
     [API_Manager GETRequestWithURL:self.instagramURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -127,20 +133,31 @@
         
         NSArray* results = json[@"data"];
         
+        NSDictionary* firstJSONdataFromResults = [results firstObject];
+        
+        InstagramPost* post= [[InstagramPost alloc] initWithJSON: firstJSONdataFromResults];
+        
+        NSURL* imageURL = [NSURL URLWithString:post.urlString];
+        
+        NSData *pictureData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage *picture = [UIImage imageWithData:pictureData];
+        self.instagramImage.image = picture;
+        
+        
         //reset my array
-        self.searchResults  = [[NSMutableArray alloc] init];
+       // self.searchResults  = [[NSMutableArray alloc] init];
         
         //loop through all JSON posts
-        for (NSDictionary* result in results) {
-            
-            //add post to array
-            InstagramPost* post= [[InstagramPost alloc] initWithJSON:result];
-            
-            [self.searchResults addObject:post];
-            
-            self.instagramImage.image = [self.searchResults firstObject];
-        }
-            self.instagramImage.image = [self.searchResults firstObject];
+//        for (NSDictionary* result in results) {
+//            
+//            //add post to array
+ //           InstagramPost* post= [[InstagramPost alloc] initWithJSON:result];
+//
+//            [self.searchResults addObject:post];
+//            
+//            self.instagramImage.image = [self.searchResults firstObject]; 
+//        }
+   //         self.instagramImage.image = [self. firstObject];
     }];
 }
 //-----------------------------------------------------------------------------------------------------------------

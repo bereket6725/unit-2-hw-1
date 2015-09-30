@@ -10,7 +10,10 @@
 
 @interface InstagramPost : NSObject
 
-@property (nonatomic) NSArray* tags;
+//@property (nonatomic) NSDictionary* images;
+
+@property (nonatomic) NSString* urlString;
+
 - (instancetype)initWithJSON:(NSDictionary*)json;
 
 

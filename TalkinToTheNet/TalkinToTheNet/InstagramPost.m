@@ -13,7 +13,17 @@
 - (instancetype)initWithJSON:(NSDictionary *)json{
     if (self = [super init]){
         
-        self.tags  = [json objectForKey:@"tags"];
+        
+        NSLog(@"%@",json);
+        
+        NSDictionary* imagesDictionary  = [json objectForKey:@"images"];
+       
+        
+        NSDictionary* lowResolutiondictionary = [imagesDictionary objectForKey:@"low_resolution"];
+        
+        
+        self.urlString = [lowResolutiondictionary objectForKey:@"url"];
+        
         
         return self;
         
